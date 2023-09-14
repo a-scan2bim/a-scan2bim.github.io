@@ -1,1 +1,321 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A-Scan2BIM: Assistive Scan to Building Information Modeling">
+  <meta name="keywords" content="Scan2BIM, Architecture, Engineering, Construction, Deep Learning, Assistive, Revit, Point Cloud">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A-Scan2BIM: Assistive Scan to Building Information Modeling</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+  -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">A-Scan2BIM: Assistive Scan to Building Information Modeling</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Weilian Song</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Jieliang Luo</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="">Dale Zhao</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Yan Fu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Chin-Yi Cheng</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Yasutaka Furukawa</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Simon Fraser University,</span>
+            <span class="author-block"><sup>2</sup>Autodesk Research,</span>
+            <span class="author-block"><sup>3</sup>Google Research</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/file/d/1zvGfdlLYbd_oAp7Oc-1vF2Czhl1A7q75/view?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!--
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              -->
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/qfzbn1fv0c4?si=2_jwAMFLJN0XmZVK"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser2.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Semi-automatic Scan2BIM process using our assistive system.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            This paper proposes an assistive system for architects that converts a
+            large-scale point cloud into a standardized digital representation of a building
+            for Building Information Modeling (BIM) applications.
+          </p>
+          <p>
+            The process is known as Scan-to-BIM, which requires many hours of
+            manual work even for a single building floor by a professional
+            architect. Given its challenging nature, the paper focuses on
+            helping architects on the Scan-to-BIM process, instead of replacing
+            them.
+          </p>
+          <p>
+            Concretely, we propose an assistive Scan-to-BIM system that takes
+            the raw sensor data and edit history (including the current BIM
+            model), then auto-regressively predicts a sequence of model editing
+            operations as APIs of a professional BIM software (i.e., Autodesk
+            Revit).
+          </p>
+          <p>
+            The paper also presents the first building-scale Scan2BIM dataset
+            that contains a sequence of model editing operations as the APIs of
+            Autodesk Revit. The dataset contains 89 hours of Scan2BIM modeling
+            processes by professional architects over 16 scenes, spanning over
+            35,000 square meter.
+          </p>
+          <p>
+            We report our system's reconstruction quality with standard metrics,
+            and we introduce a novel metric that measures how natural the order
+            of reconstructed operations is. A simple modification to the
+            reconstruction module helps improve performance, and our method is
+            far superior to two other baselines in the order metric.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/qfzbn1fv0c4?si=oSO89XEr4O7Z4fI1"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Modeling history</h2>
+
+        <!-- Interpolating. -->
+        <div class="content has-text-justified">
+          <p>
+            We created a custom Revit plugin that records modeling history of architects.
+            Use the slider to interpolate between start and end of the modeling session.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+        </div>
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <h2 class="title is-3">Assistive plugin</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our assistive tool learns from collected modeling history, and
+            offers the most natural suggestions. See the video below for a demo
+            of our tool and its functionality in Revit.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline>
+            <source src="./static/videos/assist_demo.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{weilian2023ascan2bim,
+  author    = {Song, Weilian and Luo, Jieliang and Zhao, Dale and Fu, Yan and Cheng, Chin-Yi and Furukawa, Yasutaka},
+  title     = {A-Scan2BIM: Assistive Scan to Building Information Modeling},
+  journal   = {BMVC},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop content">
+    <!-- Acknowledgment -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Acknowledgment</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            This research is partially supported by NSERC Discovery Grants with
+            Accelerator Supplements and the DND/NSERC Discovery Grant
+            Supplement, NSERC Alliance Grants, and the John R. Evans Leaders
+            Fund (JELF). We are also grateful to the
+            <a href="https://cv4aec.github.io/">CV4AEC CVPR workshop</a>
+            for providing the point clouds.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template from <a href="https://nerfies.github.io/">Nerfies</a>.
+            We thank the author for open-sourcing this great template.
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
